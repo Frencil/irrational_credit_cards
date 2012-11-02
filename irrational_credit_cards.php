@@ -93,7 +93,7 @@ foreach ($irrs as $irr => $digits){
     }
 
     if ($cc && ($len - $cc['len'] > $i)){
-      $candidate = substr($digits, $i, 16);
+      $candidate = substr($digits, $i, $cc['len']);
       if (luhn($candidate)){
         if ($show_ccs)
           echo str_pad($candidate,16) . " [" . $cc['type'] . "]\n";
